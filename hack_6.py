@@ -10,6 +10,16 @@ text: [] output => ["0"]
 
 
 def fn_hack_6(s):
-    result = s
-    #...
+    if not s :
+        return ["0"]
+    
+    result = []
+    for n in range(len(s)):
+        if n % 2 == 0:
+            result.append(str(n+1))
+            if n + 2 < len(s):
+                result.append("-")
     return result
+
+print(fn_hack_6(["a", "b", "c", "d", "e"]))  
+print(fn_hack_6([]))

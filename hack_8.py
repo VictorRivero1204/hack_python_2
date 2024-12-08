@@ -8,7 +8,16 @@ text: ["a","b"] output => ["2","1"]
 """
 
 
-def fn_hack_8(s):
-    result = s
-    #...
-    return result
+def fn_hack_8(lista):
+
+    if len(lista) % 2 == 0:  
+        resultado = [str(len(lista) - i) for i in range(len(lista))]
+    else:
+        resultado = [f"{elemento}-{len(lista)-i}" for i, elemento in enumerate(reversed(lista))]
+    
+    return resultado
+
+print(fn_hack_8(["a", "b", "c", "d", "e"]))  
+print(fn_hack_8(["a", "b", "c"]))             
+print(fn_hack_8(["a", "b", "c", "d"]))       
+print(fn_hack_8(["a", "b"]))                   
